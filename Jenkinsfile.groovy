@@ -1,7 +1,7 @@
 node {
   properties([parameters([string(defaultValue: 'IP', description: 'Where to build?', name: 'ENV', trim: true)])])
   stage("Clone repo"){
-    git 'git@github.com:neshimbekova/stormpath.git'
+    git 'git@github.com:neshimbekova/stormpath-flask-sample.git'
   }
   stage('Build application') {
     sh "ssh ec2-user@${ENV} sudo yum install python-pip -y"
